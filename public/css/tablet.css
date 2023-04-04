@@ -1,0 +1,87 @@
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    height: 33px;
+    width: 61px;
+    position: absolute;
+    left: -54px;
+    top: -14px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #3dc6c1;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2e3241;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2e3241;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+.slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  .right{
+      display: flex;
+      justify-content: space-evenly;
+  }
+.checkbox{
+    display: none;
+}
+
+
+/* table  */
+.mainTable{
+    padding: 20px 30px ;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing:0 15px;
+}
+.table th{
+    color: #6c757d;
+    font-size: 18px;
+}
+.tableValue{
+    border-color: #2e3241;
+    padding: 5px;
+}
+.tableValue td{
+    background-color: #2e3241;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.rightRadius{
+    border-radius: 0 10px 10px 0;
+}
+.leftRadius{
+    border-radius: 10px 0px 0px 10px;
+}

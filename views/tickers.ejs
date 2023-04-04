@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="screen and (min-width:700px) and (max-width:1000px)" href="/css/tablet.css" >
+  <link rel="stylesheet" media="screen and  (max-width:700px)" href="/css/mobile.css" >
+
+  <title>HodlInfo</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+
+            <img src="/images/logo.png" alt="">
+            <p>Powered By <a href="https://www.finstreet.in/">Finstreet</a></p>
+        </div>
+        <div class="btn">
+            <button>INR</button>
+            <button>BTC</button>
+        </div>
+
+        <div class="right">
+            <div id="countdown">
+                <svg>
+                    <circle r="18" cx="20" cy="20"></circle>
+                </svg>
+                <div id="countdown-number"></div>
+            </div>
+            
+            <div class="channel">
+                <a href="#">Connect Telegram</a>
+            </div>
+        </div>
+        <div>
+
+            <label class="switch">
+                <input type="checkbox" style="display: none;" checked>
+                <span class="slider round"></span>
+            </div>
+        </label>
+    </div>
+
+   
+
+    
+
+    
+    
+    <div class="">
+      
+      <table class="mainTable">
+        <tr class="table">
+            <th>#</th>
+            <th>Name</th>
+            <th>Last</th>
+            <th>Buy / Sell Price</th>
+            <th>Volume</th>
+            <th>Base_unit</th>
+        </tr>
+        <tbody>
+          <% let c=0 %>
+          <% tickers.forEach(function(ticker) { %>
+          <% c=c+1 %>
+            <tr class="tableValue">
+            <td class="leftRadius"><%= c %></td>
+            <td><%= ticker.name %></td>
+            <td><%= ticker.last %></td>
+            <td><%= ticker.buy %>/<%= ticker.sell %></td>
+            <td><%= ticker.volume %></td>
+            <td class="rightRadius"><%= ticker.base_unit %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      
+    </div>
+
+
+    <div class="footer">
+        <div class="left">
+            
+            <div>
+                <p>Copyright &copy; 2019</p>
+            </div>
+            <div>
+                <p>Hodlinfo.com</p>
+            </div>
+            
+        </div>
+        <div>
+            <p><a href="mailto:support@hodlinfo.com">Support</a></p>
+        </div>
+    </div>
+
+    
+<!-- Script -->
+    <script>
+        var countdownNumberEl = document.getElementById('countdown-number');
+        var countdown = 59;
+        countdownNumberEl.textContent = countdown;
+        setInterval(function () {
+            countdown = --countdown < 0 ? 59 : countdown;
+            countdownNumberEl.textContent = countdown;
+            if(countdown===0)
+            {
+                
+                window.location.reload()
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
+    
+
+  
